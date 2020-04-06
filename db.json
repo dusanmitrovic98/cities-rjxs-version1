@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "Belgrade",
+      "population": 1397939,
+      "country": "Serbia"
+    },
+    {
+      "id": 2,
+      "name": "Belgrade",
+      "population": 1397939,
+      "country": "Serbia"
+    }
+  ]
+}

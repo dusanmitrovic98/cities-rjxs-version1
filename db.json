@@ -2,15 +2,34 @@
   "cities": [
     {
       "id": 1,
-      "name": "Belgrade",
+      "name": "Beograd",
       "population": 1397939,
-      "country": "Serbia"
+      "country": "Srbija"
     },
     {
       "id": 2,
-      "name": "Belgrade",
-      "population": 1397939,
-      "country": "Serbia"
+      "name": "Nis",
+      "population": 250000,
+      "country": "Srbija"
+    },
+    {
+      "id": 3,
+      "name": "Novi Sad",
+      "population": 215400,
+      "country": "Srbija"
+    },
+    {
+      "id": 4,
+      "name": "Zemun",
+      "population": 155591,
+      "country": "Srbija"
+    },
+     {
+      "id": 5,
+      "name": "Kragujevac",
+      "population": 147473,
+      "country": "Srbija"
     }
+    
   ]
 }

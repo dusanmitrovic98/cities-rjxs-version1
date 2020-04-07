@@ -10,28 +10,37 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  const inputCityName = drawHtmlInputElement("inputCity", document.body);
+  const inputCity = drawInputHtmlElement("inputCity", document.body);
 
-  fromEvent(inputCityName, "input")
+  fromEvent(inputCity, "input")
     .pipe(
       sampleTime(1000),
       map(event => event.target.value)
     ).subscribe(textToBeFiltered => {
       console.clear();
       const filteredText = filterText(textToBeFiltered);
-      inputCityName.value = filteredText;
+      inputCity.value = filteredText;
       const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(city => {
-        console.log(city[0]);
+
       })      
     })
 
 }
 
-function drawHtmlInputElement(inputId, parent)
+function drawInputHtmlElement(parent, id)
 {
   var input = document.createElement("input");
-  input.id = inputId;
+  input.id = id;
   parent.appendChild(input);
   return input;
+}
+
+function drawDivHtmlElement(parent, innerHtml, id)
+{
+  var div = document.createElement("div");
+  div.innerHTML = innerHtml;
+  div.id = id;
+  parent.appendChild(div);
+  return div;
 }

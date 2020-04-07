@@ -1,6 +1,6 @@
 // Import stylesheets
 import './style.css';
-import { City } from './src/models/City.js';
+import { City } from './src/models/city.js';
 import { drawHtmlElements } from './src/draw-html-elements.js';
 import
 { 

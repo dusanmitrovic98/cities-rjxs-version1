@@ -22,11 +22,7 @@ export function drawHtmlElements()
       inputCity.value = filteredText;
       const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(city => {
-          drawDivHtmlElement(document.body, `Id: ${city[0].id} | ` + 
-                                            `name: ${city[0].name} | ` +
-                                            `population: ${city[0].population} | ` + 
-                                            `country: ${city[0].country}`,
-                                            "cityDataDiv");
+          var div = drawDivHtmlElement(document.body, "skdoak", "cityDataDiv");
       })      
     })
 

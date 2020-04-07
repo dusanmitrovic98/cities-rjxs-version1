@@ -1,19 +1,16 @@
-require('rxjs');
-require('rxjs/operators');
+import { fromEvent } from "rxjs";
+import { map, sampleTime } from "rxjs/operators";
 import { subscribeFetchCities} from './src/cities-services.js';
 
 export function drawHtmlElements()
 {
   const inputCityName = drawHtmlInputElement("inputCityName", document.body);
 
-  const clicks = fromEvent(document, 'click');
-const result = clicks.pipe(sampleTime(1000));
-result.subscribe(x => console.log(x));
- /* fromEvent(inputCityName, "input")
+  fromEvent(inputCityName, "input")
     .pipe(
       sampleTime(1000),
-
-    )*/
+      map(event => event.target.value)
+    )
 
 }
 

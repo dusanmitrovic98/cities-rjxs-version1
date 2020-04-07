@@ -58,7 +58,7 @@ function drawInputCityData(inputCity)
           const citiesObservable = subscribeFetchCityByName(filteredText);
           citiesObservable.subscribe(city => {
             if(city[0])
-              const cityDiv = drawDivHtmlElement(divCityContainer, 
+              const divCity = drawDivHtmlElement(divCityContainer, 
                                                 `Id: ${city[0].id} | ` + 
                                                 `name: ${city[0].name} | ` +
                                                 `population: ${city[0].population} | ` + 
@@ -70,6 +70,13 @@ function drawInputCityData(inputCity)
 
 function drawCitiesList()
 {
+  divDitiesListContainer.querySelectorAll('*').forEach(child => child.remove());
   subscribeFetchCities()
-    .subscribe(cities)
+    .subscribe(cities => {
+      cities.map(city => {
+        const divCityListElement = drawDivHtmlElement(divDitiesListContainer,
+                                                      `${city.id}. ${city.name}`,
+                                                      "divCityListElement")
+      })
+    })
 }

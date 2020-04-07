@@ -13,6 +13,5 @@ export function filterText(textToBeFiltered)
 
 export function filterSpacesForHTTPS(textToBeFiltered)
 {
-  filteredText = "";
-  textToBeFiltered
+
 }

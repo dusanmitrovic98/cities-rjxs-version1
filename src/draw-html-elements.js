@@ -10,7 +10,8 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  const inputCityName = drawHtmlInputElement("inputCityName", document.body);
+  const inputCityName = drawHtmlInputElement("inputCity", document.body);
+  inputCityName.autocomplete = "on";
 
   fromEvent(inputCityName, "input")
     .pipe(

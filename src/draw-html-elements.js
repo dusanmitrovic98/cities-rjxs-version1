@@ -45,14 +45,14 @@ function drawDivHtmlElement(parent, innerHtml, id)
   return div;
 }
 
-function drawButtonHtlmElement(parent, innerHtml, id)
+function drawHideDivButtonHtlmElement(parent, innerHtml, id, container)
 {
   const button = document.createElement("button");
   button.id = id;
   button.innerHTML = innerHtml;
   parent.appendChild(button);
   button.onclick = () => {
-    var container = document.getElementById("myDIV");
+    var container = document.getElementById(container);
     if (container.style.display === "none") 
     {
       container.style.display = "block";

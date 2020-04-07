@@ -25,6 +25,8 @@ export function drawHtmlElements()
   const divCityContainer = drawDivHtmlElement(document.body, "", "divCityContainer");
   
   drawInputCityData(inputCity);
+
+  drawHideDivButtonHtlmElement(document.body, "Movies and actors RXJS version", "hideButton");
 }
 
 function drawInputHtmlElement(parent, id, autocomplete)
@@ -45,14 +47,14 @@ function drawDivHtmlElement(parent, innerHtml, id)
   return div;
 }
 
-function drawHideDivButtonHtlmElement(parent, innerHtml, id, container)
+function drawHideDivButtonHtlmElement(parent, innerHtml, id)
 {
   const button = document.createElement("button");
   button.id = id;
   button.innerHTML = innerHtml;
   parent.appendChild(button);
   button.onclick = () => {
-    var container = document.getElementById(container);
+    var container = document.getElementById("container");
     if (container.style.display === "none") 
     {
       container.style.display = "block";

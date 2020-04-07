@@ -1,3 +1,5 @@
+import { from } from 'rxjs';
+
 //Links to our database;
 const URL_FETCH_MOVIES =
   "https://my-json-server.typicode.com/dusanmitrovic98/movies-and-actors-version2/movies/";
@@ -12,32 +14,28 @@ export function subscribeFetchMovies() {
   return moviesObservable;
 }
 
-export async function getMoviesById(movieId) {
-  return await (await fetch(URL_FETCH_MOVIES + movieId)
-    .catch(errorHandler))
-      .json();
+export function subscribeFetchCityById(movieId)
+{
+    var movieObservable = from(
+    fetch(URL_FETCH_MOVIES + movieId)
+      .then(response => response.json())
+  )
+  return movieObservable;
 }
 
 export function subscribeFetchActors() {
     var actorsObservable = from(
-    fetch(URL_FETCH_MOVIES)
+    fetch(URL_FETCH_ACTORS)
       .then(response => response.json())
   )
   return actorsObservable;
 }
 
-export async function getActorsById(actorId) {
-  return await (await fetch(URL_FETCH_ACTORS + actorId)
-    .catch(errorHandler))
-      .json();
-}
-
-function errorHandler(error) {
-  console.warr(error);
-  let response = new Response(
-    JSON.stringify({
-      message: "fetch error!"
-    })
-  );
-  return response;
+export function subscribeFetchActorById(actorId)
+{
+    var actorObservable = from(
+    fetch(URL_FETCH_ACTORS + actorId)
+      .then(response => response.json())
+  )
+  return actorObservable;
 }

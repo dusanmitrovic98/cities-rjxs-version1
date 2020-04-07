@@ -1,13 +1,13 @@
 import 
 {
-  getMovies,
-  getMoviesById,
-  getActors,
-  getActorsById
+  subscribeFetchMovies,
+  subscribeFetchCityById,
+  subscribeFetchActors,
+  subscribeFetchActorById
 }
 from './fetch-movies-and-actors.js';
 
-export function drawHtmlElements()
+export function drawHtmlElementsMoviesAndActorsRJXS()
 {
   console.log("Movie call history:");
 

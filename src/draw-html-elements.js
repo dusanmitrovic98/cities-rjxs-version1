@@ -10,13 +10,18 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  const divCitieList = drawDivHtmlElement(document.body, 
-                                          "List of cities in our database:"
-                                          , "divCitiesList");
+  const divCitiesList = drawDivHtmlElement(document.body, 
+                                          "List of cities in our database:",  "divCitiesList");
 
-  const inputCity = drawInputHtmlElement(document.body, "inputCity", "on");
+  const divDitiesListContainer = drawDivHtmlElement(document.body,
+                                                    "",
+                                                    "divDitiesListContainer");
 
-  const divCityContainer = drawDivHtmlElement(document.body, "","divCityContainer");
+  drawCitiesList();
+
+  const inputCity = drawInputHtmlElement(document.body, "inputCity", "off");
+
+  const divCityContainer = drawDivHtmlElement(document.body, "", "divCityContainer");
   
   drawInputCityData(inputCity);
 }
@@ -61,4 +66,9 @@ function drawInputCityData(inputCity)
                                                 , "cityDataDiv");
             })    
           })
+}
+
+function drawCitiesList()
+{
+  
 }

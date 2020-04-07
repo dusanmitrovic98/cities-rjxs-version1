@@ -11,7 +11,8 @@ from './cities-services.js';
 export function drawHtmlElements()
 {
   const divCitiesList = drawDivHtmlElement(document.body, 
-                                          "List of cities in our database:",  "divCitiesList");
+                                          "List of cities in our database:",  
+                                          "divCitiesList");
 
   const divDitiesListContainer = drawDivHtmlElement(document.body,
                                                     "",

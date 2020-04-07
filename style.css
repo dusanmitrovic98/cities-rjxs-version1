@@ -20,6 +20,11 @@ body{
   margin-left: 10px;
 }
 
+#divInputCity{
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
 #inputCity{
   margin-bottom: 20px;
   margin-left: 10px;

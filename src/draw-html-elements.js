@@ -20,6 +20,8 @@ export function drawHtmlElements()
 
   drawCitiesList();
 
+  const divInputCity = drawDivHtmlElement(document.body, "Insert city name:", "divInputCity");
+
   const inputCity = drawInputHtmlElement(document.body, "inputCity", "off");
 
   const divCityContainer = drawDivHtmlElement(document.body, "", "divCityContainer");

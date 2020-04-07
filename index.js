@@ -6,4 +6,3 @@ import { filterText } from './src/filter-text.js';
 
 // Write Javascript code!
 
-conssole.log(filterText("dada%$@"));

@@ -11,7 +11,7 @@ from './cities-services.js';
 export function drawHtmlElements()
 {
   const inputCityName = drawHtmlInputElement("inputCity", document.body);
-  
+
   fromEvent(inputCityName, "input")
     .pipe(
       sampleTime(1000),
@@ -23,8 +23,7 @@ export function drawHtmlElements()
       const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(city => {
         console.log(city[0]);
-      })
-      
+      })      
     })
 
 }

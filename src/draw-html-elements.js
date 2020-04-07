@@ -14,7 +14,10 @@ export function drawHtmlElements()
     ).subscribe(textToBeFiltered => {
       const filteredText = filterText(textToBeFiltered);
       inputCityName.value = filteredText;
-
+      const citiesObservable = subscribeFetchCities();
+      citiesObservable.subscribe(cities => {
+        cities
+      })
       
     })
 

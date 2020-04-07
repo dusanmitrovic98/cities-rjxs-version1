@@ -15,7 +15,7 @@ export function drawHtmlElements()
       console.clear();
       const filteredText = filterText(textToBeFiltered);
       inputCityName.value = filteredText;
-      const citiesObservable = subscribeFetchCities();
+      const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(cities => {
         cities.map(city => {
           console.log(city);

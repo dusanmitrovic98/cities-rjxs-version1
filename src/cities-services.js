@@ -16,7 +16,7 @@ export function subscribeFetchCities()
 export function subscribeFetchCityByName(cityName)
 {
     var cityObservable = from(
-    fetch(URL_TO_FETCH_CITIES + cityName)
+    fetch(URL_TO_FETCH_CITIES + "?name=" + cityName)
       .then(response => response.json())
   )
   return cityObservable;

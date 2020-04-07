@@ -70,3 +70,7 @@ body{
 #movieData{
   margin-left: 10px;
 }
+
+#container{
+  display: none;
+}

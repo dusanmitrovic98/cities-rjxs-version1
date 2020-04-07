@@ -35,8 +35,13 @@ body{
 }
 
 #hideButton{
-  margin-bottom: 20px;
   margin-left: 10px;
+}
+
+#showHide{
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 
 #cityDataDiv{

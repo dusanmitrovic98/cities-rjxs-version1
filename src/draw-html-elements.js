@@ -10,33 +10,39 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  const inputCity = drawInputHtmlElement(document.body, "inputCity");
+  
 
+  const inputCity = drawInputHtmlElement(document.body, "inputCity", "on");
+
+  const divCityContainer = drawDivHtmlElement(document.body, "","divCityContainer");
+  
   fromEvent(inputCity, "input")
     .pipe(
       sampleTime(1000),
       map(event => event.target.value)
-    ).subscribe(textToBeFiltered => {
-      console.clear();
-      const filteredText = filterText(textToBeFiltered);
-      inputCity.value = filteredText;
-      const citiesObservable = subscribeFetchCityByName(filteredText);
-      citiesObservable.subscribe(city => {
-        console.log(city[0]);
-      /*
-          const cityDiv = drawDivHtmlElement(document.body, `Id: ${city[0].id} | ` + 
-                                            `name: ${city[0].name} | ` +
-                                            `population: ${city[0].population} | ` + 
-                                            `country: ${city[0].country}`,
-                                            "cityDataDiv");*/
-      })    
-    })
+      ).subscribe(textToBeFiltered => {
+          divCityContainer.querySelectorAll('*').forEach(child => child.remove());
+          console.clear();
+          const filteredText = filterText(textToBeFiltered);
+          inputCity.value = filteredText;
+          const citiesObservable = subscribeFetchCityByName(filteredText);
+          citiesObservable.subscribe(city => {
+            if(city[0])
+              const cityDiv = drawDivHtmlElement(divCityContainer, 
+                                                `Id: ${city[0].id} | ` + 
+                                                `name: ${city[0].name} | ` +
+                                                `population: ${city[0].population} | ` + 
+                                                `country: ${city[0].country}`
+                                                , "cityDataDiv");
+            })    
+          })
 }
 
-function drawInputHtmlElement(parent, id)
+function drawInputHtmlElement(parent, id, autocomplete)
 {
   var input = document.createElement("input");
   input.id = id;
+  input.autocomplete = "off";
   parent.appendChild(input);
   return input;
 }

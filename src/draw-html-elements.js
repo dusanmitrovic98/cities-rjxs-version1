@@ -22,7 +22,7 @@ export function drawHtmlElements()
       inputCityName.value = filteredText;
       const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(city => {
-        console.log(city);
+        console.log(city[0]);
       })
       
     })

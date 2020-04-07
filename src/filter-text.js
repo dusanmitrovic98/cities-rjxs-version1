@@ -5,6 +5,14 @@ export function filterText(textToBeFiltered)
     .forEach((character) => {
       if(character.toLowerCase() != character.toUpperCase())
         filteredText += character;
+      if(character == " ")
+        filteredText += " ";
     })
   return filteredText;
+}
+
+export function filterSpacesForHTTPS(textToBeFiltered)
+{
+  filteredText = "";
+  textToBeFiltered
 }

@@ -4,10 +4,12 @@ const URL_FETCH_MOVIES =
 const URL_FETCH_ACTORS =
   "https://my-json-server.typicode.com/dusanmitrovic98/movies-and-actors-version2/actors/";
 
-export async function getMovies() {
-  return await (await fetch(URL_FETCH_MOVIES)
-    .catch(errorHandler))
-      .json();
+export function subscribeFetchMovies() {
+    var moviesObservable = from(
+    fetch(URL_FETCH_MOVIES)
+      .then(response => response.json())
+  )
+  return moviesObservable;
 }
 
 export async function getMoviesById(movieId) {
@@ -16,10 +18,12 @@ export async function getMoviesById(movieId) {
       .json();
 }
 
-export async function getActors() {
-  return await (await fetch(URL_FETCH_ACTORS)
-    .catch(errorHandler))
-      .json();
+export function subscribeFetchActors() {
+    var actorsObservable = from(
+    fetch(URL_FETCH_MOVIES)
+      .then(response => response.json())
+  )
+  return actorsObservable;
 }
 
 export async function getActorsById(actorId) {

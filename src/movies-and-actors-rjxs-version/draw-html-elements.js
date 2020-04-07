@@ -128,7 +128,8 @@ function selectMovieOnChange(id){
         movieActorsListDiv.innerHTML = `${movie.title} actors list:`;
         Promise.all(movie.actorsById.map(actorId => {
           if(actorId != 0)
-            getActorsById(actorId).then(actor => {
+            const actorObservable = subscribeFetchActorById(actorId);
+            actorObservable.subscribe(actor => {
             drawDivHtmlElement(newActorsList, "Actor id: " + actor.id + " | " +
                                               "name: " + actor.name + " | " +
                                               "last name: " + actor.lastName);

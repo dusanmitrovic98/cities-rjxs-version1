@@ -31,7 +31,6 @@ export function drawHtmlElements()
                                             "cityDataDiv");*/
       })    
     })
-
 }
 
 function drawInputHtmlElement(parent, id)

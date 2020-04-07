@@ -29,7 +29,7 @@ export function drawHtmlElements()
 
 function drawInputHtmlElement(parent, id, autocomplete)
 {
-  var input = document.createElement("input");
+  const input = document.createElement("input");
   input.id = id;
   input.autocomplete = "off";
   parent.appendChild(input);
@@ -38,11 +38,20 @@ function drawInputHtmlElement(parent, id, autocomplete)
 
 function drawDivHtmlElement(parent, innerHtml, id)
 {
-  var div = document.createElement("div");
+  const div = document.createElement("div");
   div.innerHTML = innerHtml;
   div.id = id;
   parent.appendChild(div);
   return div;
+}
+
+function drawButtonHtlmElement(parent, innerHtml, id)
+{
+  const button = document.createElement("button");
+  button.id = id;
+  button.innerHTML = innerHtml;
+  parent.appendChild(button);
+  
 }
 
 function drawInputCityData(inputCity)

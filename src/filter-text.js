@@ -1,6 +1,6 @@
 export function filterText(textToBeFiltered)
 {
-  filteredText = "";
+  var filteredText = "";
   textToBeFiltered.split('')
     .forEach((character) => {
       if(character.toLowerCase() != character.toUpperCase())

@@ -13,6 +13,15 @@ export function subscribeFetchCities()
   return citiesObservable;
 }
 
+export function subscribeFetchCityByName(cityName)
+{
+    var cityObservable = from(
+    fetch(URL_TO_FETCH_CITIES + cityName)
+      .then(response => response.json())
+  )
+  return cityObservable;
+}
+
 /*
 var citiesObservablee = subscribeFetchCities();
 citiesObservablee.subscribe(cities => {

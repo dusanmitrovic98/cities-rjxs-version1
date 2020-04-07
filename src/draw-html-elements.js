@@ -12,11 +12,14 @@ export function drawHtmlElements()
       sampleTime(1000),
       map(event => event.target.value)
     ).subscribe(textToBeFiltered => {
+      console.clear();
       const filteredText = filterText(textToBeFiltered);
       inputCityName.value = filteredText;
       const citiesObservable = subscribeFetchCities();
       citiesObservable.subscribe(cities => {
-        cities
+        cities.map(city => {
+          console.log(city);
+        })
       })
       
     })

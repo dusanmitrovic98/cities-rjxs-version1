@@ -1,7 +1,7 @@
 import { fromEvent } from 'rxjs';
 import { map, sampleTime } from 'rxjs/operators';
-import { filterText } from './src/filter-text.js';
-import { subscribeFetchCities} from './src/cities-services.js';
+import { filterText } from './filter-text.js';
+import { subscribeFetchCities} from './cities-services.js';
 
 export function drawHtmlElements()
 {

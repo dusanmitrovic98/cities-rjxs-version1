@@ -22,13 +22,5 @@ export function subscribeFetchCityByName(cityName)
   return cityObservable;
 }
 
-/*
-var citiesObservablee = subscribeFetchCities();
-citiesObservablee.subscribe(cities => {
-  cities.map(city => {
-    console.log(city);
-  })
-})
-*/
 
 

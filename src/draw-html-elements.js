@@ -51,7 +51,9 @@ function drawButtonHtlmElement(parent, innerHtml, id)
   button.id = id;
   button.innerHTML = innerHtml;
   parent.appendChild(button);
-  
+  button.onclick = () => {
+    
+  }
 }
 
 function drawInputCityData(inputCity)

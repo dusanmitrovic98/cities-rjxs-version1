@@ -14,7 +14,7 @@ export function subscribeFetchMovies() {
   return moviesObservable;
 }
 
-export function subscribeFetchCityById(movieId)
+export function subscribeFetchMovieById(movieId)
 {
     var movieObservable = from(
     fetch(URL_FETCH_MOVIES + movieId)

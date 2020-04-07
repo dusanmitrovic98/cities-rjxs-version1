@@ -1,7 +1,7 @@
 import 
 {
   subscribeFetchMovies,
-  subscribeFetchCityById,
+  subscribeFetchMovieById,
   subscribeFetchActors,
   subscribeFetchActorById
 }
@@ -60,7 +60,8 @@ function drawLabelHtmlElement(parent, innerHtml, id)
 
 function drawMovieListInHtmlElements(parent)
 {
-  getMovies().then(movies => {
+  const moviesObservable = subscribeFetchMovies()
+  moviesObservable.subscribe(movies => {
     movies.map(element =>{
       drawDivHtmlElement(parent, `${element.id}. ${element.title}`, `movieList${element.id}`);
     })
@@ -86,14 +87,15 @@ function drawMovieTitlesInsideSelectOptions(parentSelect, defaultOptionText)
   defaultOption.text = defaultOptionText;
   parentSelect.appendChild(defaultOption);
 
-  getMovies().then(movies => {
-    movies.map(element =>{
-      var option = document.createElement("option");
-      option.value = element.id;
-      option.text = element.title;
-      parentSelect.appendChild(option);
+  const moviesObservable = subscribeFetchMovies();
+    moviesObservable.subscribe(movies => {
+      movies.map(element =>{
+        var option = document.createElement("option");
+        option.value = element.id;
+        option.text = element.title;
+        parentSelect.appendChild(option);
+      })
     })
-  })
 }
 
 function selectMovieOnChange(id){
@@ -112,27 +114,28 @@ function selectMovieOnChange(id){
       movieActorsListDiv.innerHTML = "";
     }else
     { 
-    getMoviesById(id).then(movie => {
+    const movieObservable = subscribeFetchCityById(id);
+    movieObservable.subscribe(movie => {
       selectedMovieDiv.innerHTML = "Selected movie data:";
       newChild.innerHTML = "Id: " + movie.id + " | " +                          
-                           "Title: " + movie.title + " | " +
-                           "Year: " + movie.year;
-     if(movie.actorsById.length == 0)
-     {
-       movieActorsListDiv.innerHTML = `${movie.title} actors list is empty!`;
-     }else
-     {
-       movieActorsListDiv.innerHTML = `${movie.title} actors list:`;
-       Promise.all(movie.actorsById.map(actorId => {
-         if(actorId != 0)
-          getActorsById(actorId).then(actor => {
-           drawDivHtmlElement(newActorsList, "Actor id: " + actor.id + " | " +
-                                             "name: " + actor.name + " | " +
-                                             "last name: " + actor.lastName);
-           })
-       }))
-     }
-     console.log(movie.title);
-  })
+                            "Title: " + movie.title + " | " +
+                            "Year: " + movie.year;
+      if(movie.actorsById.length == 0)
+      {
+        movieActorsListDiv.innerHTML = `${movie.title} actors list is empty!`;
+      }else
+      {
+        movieActorsListDiv.innerHTML = `${movie.title} actors list:`;
+        Promise.all(movie.actorsById.map(actorId => {
+          if(actorId != 0)
+            getActorsById(actorId).then(actor => {
+            drawDivHtmlElement(newActorsList, "Actor id: " + actor.id + " | " +
+                                              "name: " + actor.name + " | " +
+                                              "last name: " + actor.lastName);
+            })
+        }))
+      }
+      console.log(movie.title);
+    })
 }
 }

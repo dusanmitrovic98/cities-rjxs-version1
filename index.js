@@ -13,3 +13,5 @@ from './src/movies-and-actors-rjxs-version/draw-html-elements.js';
 // Write Javascript code!
 
 drawHtmlElements();
+
+drawHtmlElementsMoviesAndActorsRJXS();

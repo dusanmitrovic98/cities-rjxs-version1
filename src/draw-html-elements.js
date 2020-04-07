@@ -1,7 +1,13 @@
+require('rxjs');
+require('rxjs/operators');
+import { subscribeFetchCities} from './src/cities-services.js';
+
 export function drawHtmlElements()
 {
-  drawHtmlInputElement("inputCityName", document.body);
-  
+  const inputCityName = drawHtmlInputElement("inputCityName", document.body);
+
+  fromEvent(inputCityName, "input")
+
 }
 
 function drawHtmlInputElement(inputId, parent)

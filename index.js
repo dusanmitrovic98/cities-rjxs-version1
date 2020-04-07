@@ -2,11 +2,8 @@
 import './style.css';
 import { City } from './src/models/City.js';
 import { filterText } from './src/filter-text.js';
-import 
-{
-  subscribeFetchCities
-}
-from './src/cities-services.js';
+import { drawHtmlElements } from './src/draw-html-elements.js';
+
 
 
 // Write Javascript code!

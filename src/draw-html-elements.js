@@ -2,7 +2,7 @@ import { fromEvent } from 'rxjs';
 import { map, sampleTime } from 'rxjs/operators';
 import { filterText } from './filter-text.js';
 import 
-{ 
+{
   subscribeFetchCities,
   subscribeFetchCityByName
 }
@@ -10,7 +10,7 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  const inputCity = drawInputHtmlElement("inputCity", document.body);
+  const inputCity = drawInputHtmlElement(document.body, "inputCity");
 
   fromEvent(inputCity, "input")
     .pipe(
@@ -22,8 +22,14 @@ export function drawHtmlElements()
       inputCity.value = filteredText;
       const citiesObservable = subscribeFetchCityByName(filteredText);
       citiesObservable.subscribe(city => {
-          var div = drawDivHtmlElement(document.body, "skdoak", "cityDataDiv");
-      })      
+        console.log(city[0]);
+      /*
+          const cityDiv = drawDivHtmlElement(document.body, `Id: ${city[0].id} | ` + 
+                                            `name: ${city[0].name} | ` +
+                                            `population: ${city[0].population} | ` + 
+                                            `country: ${city[0].country}`,
+                                            "cityDataDiv");*/
+      })    
     })
 
 }

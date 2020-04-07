@@ -22,6 +22,10 @@ body{
   margin-bottom: 20px;
 }
 
+#hideButton{
+  margin-bottom: 20px;
+}
+
 /*movie and actors style*/
 
 #movieListDiv {

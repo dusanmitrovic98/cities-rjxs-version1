@@ -114,7 +114,7 @@ function selectMovieOnChange(id){
       movieActorsListDiv.innerHTML = "";
     }else
     { 
-    const movieObservable = subscribeFetchCityById(id);
+    const movieObservable = subscribeFetchMovieById(id);
     movieObservable.subscribe(movie => {
       selectedMovieDiv.innerHTML = "Selected movie data:";
       newChild.innerHTML = "Id: " + movie.id + " | " +                          

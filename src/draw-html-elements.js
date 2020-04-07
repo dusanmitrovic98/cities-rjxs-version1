@@ -14,13 +14,13 @@ export function drawHtmlElements()
                     "List of cities in our database:",  
                     "divCitiesList");
 
-  const divDitiesListContainer = drawDivHtmlElement(document.body,
-                                                    "",
-                                                    "divDitiesListContainer");
+  drawDivHtmlElement(document.body,
+                    "",
+                    "divDitiesListContainer");
 
   drawCitiesList();
 
-  const divInputCity = drawDivHtmlElement(document.body, "Insert city name:", "divInputCity");
+  drawDivHtmlElement(document.body, "Insert city name:", "divInputCity");
 
   const inputCity = drawInputHtmlElement(document.body, "inputCity", "off");
 
@@ -28,7 +28,9 @@ export function drawHtmlElements()
   
   drawInputCityData(inputCity);
 
-  drawHideDivButtonHtlmElement(document.body, "Movies and actors RXJS version", "hideButton");
+  drawHideDivButtonHtlmElement(document.body,
+                               "Movies and actors RXJS version", 
+                               "hideButton");
 
   drawDivHtmlElement(document.body, "show/hide", "showHide");
 }
@@ -88,12 +90,12 @@ function drawInputCityData(inputCity)
           const citiesObservable = subscribeFetchCityByName(filteredText);
           citiesObservable.subscribe(city => {
             if(city[0])
-              const divCity = drawDivHtmlElement(divCityContainer, 
-                                                `Id: ${city[0].id} | ` + 
-                                                `name: ${city[0].name} | ` +
-                                                `population: ${city[0].population} | ` + 
-                                                `country: ${city[0].country}`
-                                                , "cityDataDiv");
+              drawDivHtmlElement(divCityContainer, 
+                                `Id: ${city[0].id} | ` + 
+                                `name: ${city[0].name} | ` +
+                                `population: ${city[0].population} | ` + 
+                                `country: ${city[0].country}`
+                                , "cityDataDiv");
             })    
           })
 }
@@ -104,9 +106,9 @@ function drawCitiesList()
   subscribeFetchCities()
     .subscribe(cities => {
       cities.map(city => {
-        const divCityListElement = drawDivHtmlElement(divDitiesListContainer,
-                                                      `${city.id}. ${city.name}`,
-                                                      "divCityListElement")
+        drawDivHtmlElement(divDitiesListContainer,
+                          `${city.id}. ${city.name}`,
+                          "divCityListElement")
       })
     })
 }

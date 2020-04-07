@@ -18,7 +18,30 @@ export function drawHtmlElements()
 
   const divCityContainer = drawDivHtmlElement(document.body, "","divCityContainer");
   
-  fromEvent(inputCity, "input")
+  drawInputCityData(inputCity);
+}
+
+function drawInputHtmlElement(parent, id, autocomplete)
+{
+  var input = document.createElement("input");
+  input.id = id;
+  input.autocomplete = "off";
+  parent.appendChild(input);
+  return input;
+}
+
+function drawDivHtmlElement(parent, innerHtml, id)
+{
+  var div = document.createElement("div");
+  div.innerHTML = innerHtml;
+  div.id = id;
+  parent.appendChild(div);
+  return div;
+}
+
+function drawInputCityData(inputCity)
+{
+    fromEvent(inputCity, "input")
     .pipe(
       sampleTime(1000),
       map(event => event.target.value)
@@ -38,22 +61,4 @@ export function drawHtmlElements()
                                                 , "cityDataDiv");
             })    
           })
-}
-
-function drawInputHtmlElement(parent, id, autocomplete)
-{
-  var input = document.createElement("input");
-  input.id = id;
-  input.autocomplete = "off";
-  parent.appendChild(input);
-  return input;
-}
-
-function drawDivHtmlElement(parent, innerHtml, id)
-{
-  var div = document.createElement("div");
-  div.innerHTML = innerHtml;
-  div.id = id;
-  parent.appendChild(div);
-  return div;
 }

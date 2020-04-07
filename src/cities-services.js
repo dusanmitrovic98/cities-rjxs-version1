@@ -6,7 +6,7 @@ const URL_TO_FETCH_CITIES =
 
 export function subscribeFetchCities()
 {
-  var citiesObservable = from(
+  const citiesObservable = from(
     fetch(URL_TO_FETCH_CITIES)
       .then(response => response.json())
   )

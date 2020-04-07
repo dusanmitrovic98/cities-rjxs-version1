@@ -10,7 +10,9 @@ from './cities-services.js';
 
 export function drawHtmlElements()
 {
-  
+  const divCitieList = drawDivHtmlElement(document.body, 
+                                          "List of cities in our database:"
+                                          , "divCitiesList");
 
   const inputCity = drawInputHtmlElement(document.body, "inputCity", "on");
 

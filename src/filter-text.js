@@ -10,8 +10,3 @@ export function filterText(textToBeFiltered)
     })
   return filteredText;
 }
-
-export function filterSpacesForHTTPS(textToBeFiltered)
-{
-
-}

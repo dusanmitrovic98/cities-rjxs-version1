@@ -14,6 +14,7 @@ export function drawHtmlElements()
     ).subscribe(textToBeFiltered => {
       const filteredText = filterText(textToBeFiltered);
       inputCityName.value = filteredText;
+
       
     })
 

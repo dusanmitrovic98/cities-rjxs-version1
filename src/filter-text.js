@@ -4,7 +4,7 @@ export function filterText(textToBeFiltered)
   textToBeFiltered.split('')
     .forEach((character) => {
       if(character.toLowerCase() != character.toUpperCase())
-        filterText += character;
+        filteredText += character;
     })
-  return filterText;
+  return filteredText;
 }

@@ -11,7 +11,7 @@ from './src/cities-services.js';
 
 // Write Javascript code!
 
-var citiesObservablee = subscribeFetchCities();
+const citiesObservablee = subscribeFetchCities();
 citiesObservablee.subscribe(cities => {
   console.log(cities);
 })

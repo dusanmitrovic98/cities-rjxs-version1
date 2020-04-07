@@ -11,3 +11,9 @@ from './src/cities-services.js';
 
 // Write Javascript code!
 
+var citiesObservable = subscribeFetchCities();
+citiesObservable.subscribe(cities => {
+  cities.map(City => {
+    console.log(City);
+  })
+})

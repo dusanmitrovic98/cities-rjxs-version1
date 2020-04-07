@@ -53,6 +53,7 @@ function drawHideDivButtonHtlmElement(parent, innerHtml, id)
   button.id = id;
   button.innerHTML = innerHtml;
   button.className = "btn btn-secondary text-white";
+
   parent.appendChild(button);
   button.onclick = () => {
     
@@ -64,6 +65,7 @@ function drawHideDivButtonHtlmElement(parent, innerHtml, id)
     else 
     {
       container.style.display = "block";
+      button.href = "#container";
     }
   }
 }

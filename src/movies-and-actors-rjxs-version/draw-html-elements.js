@@ -11,23 +11,25 @@ export function drawHtmlElementsMoviesAndActorsRJXS()
 {
   console.log("Movie call history:");
 
-  drawDivHtmlElement(document.body, "List of movies in our database:", "movieListDiv");
+  const container = drawDivHtmlElement(document.body, "", "container");
 
-  drawDivHtmlElement(document.body, "", "movieListContainer");
+  drawDivHtmlElement(container, "List of movies in our database:", "movieListDiv");
+
+  drawDivHtmlElement(container, "", "movieListContainer");
 
   drawMovieListInHtmlElements(movieListContainer);
 
-  drawLabelHtmlElement(document.body, "Select movie: ", "selectMovieLabel");
+  drawLabelHtmlElement(container, "Select movie: ", "selectMovieLabel");
 
-  drawMovieSelectHtmlElement(document.body, "selectMovies");
+  drawMovieSelectHtmlElement(container, "selectMovies");
 
-  drawDivHtmlElement(document.body, "", "selectedMovieDiv");
+  drawDivHtmlElement(container, "", "selectedMovieDiv");
  
-  drawDivHtmlElement(document.body, "", "movieData");
+  drawDivHtmlElement(container, "", "movieData");
 
-  drawDivHtmlElement(document.body, "", "movieActorsListDiv");
+  drawDivHtmlElement(container, "", "movieActorsListDiv");
 
-  drawDivHtmlElement(document.body, "", "movieActorsList");
+  drawDivHtmlElement(container, "", "movieActorsList");
 
 }
 
@@ -102,11 +104,11 @@ function selectMovieOnChange(id){
     var oldChild = document.getElementById("movieData");
     var newChild = document.createElement("div");
     newChild.id = "movieData";
-    document.body.replaceChild(newChild, oldChild);
+    container.replaceChild(newChild, oldChild);
     var oldActorsList = document.getElementById("movieActorsList");
     var newActorsList = document.createElement("div");
     newActorsList.id = "movieActorsList";
-    document.body.replaceChild(newActorsList, oldActorsList);
+    container.replaceChild(newActorsList, oldActorsList);
     if(id == 0)
     {
       selectedMovieDiv.innerHTML = "";

@@ -70,5 +70,6 @@ function drawInputCityData(inputCity)
 
 function drawCitiesList()
 {
-  
+  subscribeFetchCities()
+    .subscribe(cities)
 }

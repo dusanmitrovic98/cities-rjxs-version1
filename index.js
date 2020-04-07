@@ -8,6 +8,3 @@ import { drawHtmlElements } from './src/draw-html-elements.js';
 // Write Javascript code!
 
 drawHtmlElements();
-
-
-

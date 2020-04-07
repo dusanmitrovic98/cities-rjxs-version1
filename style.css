@@ -8,14 +8,17 @@ body{
 
 #divCitiesList{
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #divDitiesListContainer{
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #inputCity{
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #divCityContainer{
@@ -24,29 +27,46 @@ body{
 
 #hideButton{
   margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+#cityDataDiv{
+  margin-left: 10px;
 }
 
 /*movie and actors style*/
 
 #movieListDiv {
   margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 #movieListContainer {
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #selectMovieLabel {
   font-style: italic;
   margin-right: 30px;
   font-size: 20px;
+  margin-left: 10px;
 }
 
 #movieActorsListDiv {
   margin-top: 20px;
+  margin-left: 10px;
 }
 
 #selectedMovieDiv {
   margin-top: 20px;
+  margin-left: 10px;
 }
 
+#movieActorsList{
+  margin-left: 10px;
+}
+
+#movieData{
+  margin-left: 10px;
+}

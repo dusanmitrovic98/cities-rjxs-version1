@@ -52,6 +52,7 @@ function drawHideDivButtonHtlmElement(parent, innerHtml, id)
   const button = document.createElement("button");
   button.id = id;
   button.innerHTML = innerHtml;
+  button.className = "btn btn-secondary";
   parent.appendChild(button);
   button.onclick = () => {
     var container = document.getElementById("container");

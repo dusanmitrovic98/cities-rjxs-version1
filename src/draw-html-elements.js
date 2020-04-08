@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { map, sampleTime, debounceTime } from 'rxjs/operators';
+import { map, debounceTime } from 'rxjs/operators';
 import { filterText } from './filter-text.js';
 import 
 {

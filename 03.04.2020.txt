@@ -1,0 +1,26 @@
+Reaktivno programiranje
+
+
+instalacija i git: https://github.com/ReactiveX/rxjs
+
+
+
+druga paradigma (deklarativno umesto imperativnog programiranja)
+funkcionalno programiranje
+sve se posmatra kao tok podataka ("niz koji vremenom dobija nove vrednosti")
+Obeservable
+Subject
+operatori
+Urađeni primeri: link
+
+
+
+https://www.learnrxjs.io/
+
+
+
+Zadatak 1: Napraviti polje za unos teksta koje će po završetku kucanja (i kašnjenjem od jedne sekunde) filtrirati tekt izbacivanjem specijalnih znakova. Iskoristiti ga za unos imena grada, i zatim poslati zahtev API-ju koji će vratiti informacije o navedenom gradu.
+
+
+
+Zadatak 2: Primenom RxJS-a uraditi zadatak od prošle nedelje (zameniti Promise).

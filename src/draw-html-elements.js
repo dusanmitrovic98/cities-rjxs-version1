@@ -108,7 +108,7 @@ function drawCitiesList()
       cities.map(city => {
         drawDivHtmlElement(divDitiesListContainer,
                           `${city.id}. ${city.name}`,
-                          "divCityListElement")
+                          "divCityListElement");
       })
     })
 }

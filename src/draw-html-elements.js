@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { map, sampleTime } from 'rxjs/operators';
+import { map, sampleTime, debounceTime } from 'rxjs/operators';
 import { filterText } from './filter-text.js';
 import 
 {
@@ -80,7 +80,7 @@ function drawInputCityData(inputCity)
 {
     fromEvent(inputCity, "input")
     .pipe(
-      sampleTime(1000),
+      debounceTime(1000),
       map(event => event.target.value)
       ).subscribe(textToBeFiltered => {
           divCityContainer.querySelectorAll('*').forEach(child => child.remove());

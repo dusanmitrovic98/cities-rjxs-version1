@@ -61,8 +61,7 @@ function drawHideDivButtonHtlmElement(parent, innerHtml, id)
   button.className = "btn btn-secondary text-white";
 
   parent.appendChild(button);
-  button.onclick = () => {
-    
+  button.onclick = () => {   
     var container = document.getElementById("container");
     if (container.style.display === "block") 
     {

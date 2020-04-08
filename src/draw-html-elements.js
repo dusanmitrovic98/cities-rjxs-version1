@@ -14,7 +14,7 @@ export function drawHtmlElements()
                     "List of cities in our database:",  
                     "divCitiesList");
 
-  drawDivHtmlElement(document.body,
+  const divDitiesListContainer = drawDivHtmlElement(document.body,
                     "",
                     "divDitiesListContainer");
 

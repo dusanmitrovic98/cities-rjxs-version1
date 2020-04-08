@@ -24,9 +24,7 @@ export function drawHtmlElements()
   
   drawInputCityData(inputCity);
 
-  drawHideDivButtonHtlmElement(document.body,
-                               "Movies and actors RXJS version", 
-                               "hideButton");
+  drawHideDivButtonHtlmElement(document.body, "Movies and actors RXJS version", "hideButton");
 
   drawDivHtmlElement(document.body, "show/hide", "showHide");
 }
